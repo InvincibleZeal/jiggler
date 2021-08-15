@@ -3,6 +3,8 @@
 Don't ever let your system sleep again.
 This program moves your mouse, presses keys on your keyboard and switches screens for you while you rest.
 
+[![asciicast](https://asciinema.org/a/430517.svg)](https://asciinema.org/a/430517)
+
 ## Install with pip
 
 ```bash
