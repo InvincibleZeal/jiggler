@@ -1,2 +1,6 @@
-click==8.0.1
-pynput==1.7.3
+click
+pynput
+setuptools
+wheel
+build
+twine
