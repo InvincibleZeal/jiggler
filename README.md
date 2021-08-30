@@ -1,4 +1,14 @@
-# Jiggler
+<h1 align="center">Jiggler</h1>
+
+<p align="center">
+    <a href="https://pypi.org/project/jiggler/"><img src="https://badge.fury.io/py/jiggler.svg" alt="PyPI version"></a>
+    <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/jiggler">
+    <a href="https://github.com/InvincibleZeal/jiggler/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/InvincibleZeal/jiggler?logo=github"></a>
+</p>
+<p align="center">
+    <img alt="PyPI - License" src="https://img.shields.io/pypi/l/jiggler">
+    <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/jiggler?logo=python">
+</p>
 
 Don't ever let your system sleep again.
 This program moves your mouse, presses keys on your keyboard and switches screens for you while you rest.
@@ -25,7 +35,7 @@ jiggler
 
 and that's it.
 
-### Configuration Options
+## Configuration Options
 
 ```
 Options:
