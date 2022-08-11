@@ -68,11 +68,11 @@ def switch_screen(seconds, tabs, key):
 
     def mouse_has_moved():
         return (
-            (abs(previous_mouse_x - current_mouse_x) > 10) 
+            (abs(this.previous_mouse_x - this.current_mouse_x) > 10) 
             or 
-            (abs(previous_mouse_y - current_mouse_y) > 10)
+            (abs(this.previous_mouse_y - this.current_mouse_y) > 10)
             )
-            
+
     while this.alive:
         sleep(seconds)
         if not this.alive:
