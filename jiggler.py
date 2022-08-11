@@ -9,6 +9,7 @@ import click
 from pynput.keyboard import Controller as KeyboardController
 from pynput.keyboard import Key
 from pynput.mouse import Controller as MouseController
+from pynput.mouse import Listener as MouseListener
 
 mouse = MouseController()
 keyboard = KeyboardController()
@@ -49,10 +50,45 @@ def switch_screen(seconds, tabs, key):
     """
     this = current_thread()
     this.alive = True
+    
+    this.current_mouse_x = 0
+    this.current_mouse_y = 0
+    this.previous_mouse_x = 0
+    this.previous_mouse_y = 0
+
+    def on_move(x,y):
+        this.current_mouse_x = x
+        this.current_mouse_y = y
+    
+    def on_click(x, y, button, pressed):
+        pass
+
+    def on_scroll(x, y, dx, dy):
+        pass
+
+    def mouse_has_moved():
+        return (
+            (abs(this.previous_mouse_x - this.current_mouse_x) > 10) 
+            or 
+            (abs(this.previous_mouse_y - this.current_mouse_y) > 10)
+            )
+
     while this.alive:
         sleep(seconds)
         if not this.alive:
             break
+
+        listener = MouseListener(
+            on_move=on_move, 
+            on_click=on_click,
+            on_scroll=on_scroll
+            )
+        listener.start()
+
+        if mouse_has_moved():
+            this.previous_mouse_x = this.current_mouse_x
+            this.previous_mouse_y = this.current_mouse_y
+            continue
 
         modifier = getattr(Key, key)
         with keyboard.pressed(modifier):
