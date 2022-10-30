@@ -77,12 +77,14 @@ def move_mouse(seconds, pixels):
     """
     this = current_thread()
     this.alive = True
+    flip = 1;
     while this.alive:
         sleep(seconds)
         if not this.alive:
             break
 
-        mouse.move(pixels, pixels)
+        mouse.move(pixels * flip, pixels * flip)
+        flip = flip * -1
         print("{}\t[move_mouse]\tMoved mouse to".format(time.ctime(), mouse.position))
 
 
