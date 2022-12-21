@@ -1,3 +1,4 @@
+from itertools import cycle
 import os
 import platform
 import time
@@ -68,22 +69,25 @@ def switch_screen(seconds, tabs, key):
             )
 
 
-def move_mouse(seconds, pixels):
+def move_mouse(seconds, pixels, oscillate=False):
     """Moves mouse every x seconds
 
     Args:
         seconds (int): Seconds to wait between consecutive move mouse actions
-        pixels ([type]): Number of pixels to move mouse
+        pixels (int): Number of pixels to move mouse
+        oscillate (bool, optional): Move mouse back and forth (default False)
     """
     this = current_thread()
     this.alive = True
+    sign = cycle((-1, 1))
     while this.alive:
         sleep(seconds)
         if not this.alive:
             break
-
+        if oscillate:
+            pixels *= next(sign)
         mouse.move(pixels, pixels)
-        print("{}\t[move_mouse]\tMoved mouse to".format(time.ctime(), mouse.position))
+        print(f"{time.ctime()}\t[move_mouse]\tMoved mouse to {mouse.position}")
 
 
 @click.group()
