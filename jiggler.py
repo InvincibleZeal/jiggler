@@ -113,6 +113,7 @@ def cli():
 @click.option(
     "-o",
     "--oscillate",
+    is_flag=True,
     help="Move mouse back and forth rather than unidirectionally."
 )
 @click.option(
