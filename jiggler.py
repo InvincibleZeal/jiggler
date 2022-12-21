@@ -111,6 +111,11 @@ def cli():
     default=1,
 )
 @click.option(
+    "-o",
+    "--oscillate",
+    help="Move mouse back and forth rather than unidirectionally."
+)
+@click.option(
     "-m",
     "--mode",
     type=click.Choice(["m", "k", "mk", "ks", "ms", "mks"]),
@@ -129,12 +134,12 @@ def cli():
     help="Special key for switching windows",
     default=special_keys[platform.system()],
 )
-def start(seconds, pixels, mode, tabs, key):
+def start(seconds, pixels, oscillate, mode, tabs, key):
 
     try:
         threads = []
         if "m" in mode:
-            threads.append(Thread(target=move_mouse, args=(seconds, pixels)))
+            threads.append(Thread(target=move_mouse, args=(seconds, pixels, oscillate)))
 
         if "k" in mode:
             threads.append(Thread(target=key_press, args=(seconds,)))
