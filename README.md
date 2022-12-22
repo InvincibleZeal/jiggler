@@ -46,6 +46,9 @@ Options:
 -p, --pixels INTEGER            Number of pixels the mouse should move.
                                 Default is 1
 
+-o, --oscillate                 Move mouse back and forth rather than
+                                unidirectionally.
+
 -m, --mode [m|k|mk|ks|ms|mks]   Available options: m, k, mk, ks, ms, mks;
                                 default is mks.
                                 This is the action that execites when the
