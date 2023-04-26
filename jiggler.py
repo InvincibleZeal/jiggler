@@ -83,7 +83,7 @@ def move_mouse(seconds, pixels):
             break
 
         mouse.move(pixels, pixels)
-        print("{}\t[move_mouse]\tMoved mouse to".format(time.ctime(), mouse.position))
+        print(f"{time.ctime()} \t [move_mouse] \t Moved mouse to {mouse.position}")
 
 
 @click.group()
