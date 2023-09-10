@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="jiggler",
-    version="0.0.2",
+    version="0.0.3",
     author="Ritesh Ganjewala",
     author_email="ritesh.ganjewala17@gmail.com",
     license="MIT",
